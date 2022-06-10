@@ -1,0 +1,33 @@
+﻿@model RegisterVM
+@{ Layout = null; }
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/styles.css" />
+    <title>Login</title>
+</head>
+
+<body>
+    <section class="area-login">
+        <h1>Register</h1>
+        <div class="login">
+            <div>
+                <img src="https://img.icons8.com/fluency/240/000000/google-logo.png" />
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                <input asp-for="FullName" placeholder="Ad ve Soyad" />
+                <input asp-for="UserName" placeholder="Istifadeci adiniz" />
+                <input asp-for="Password" placeholder="Password" />
+                <input asp-for="Image" />
+                <input type="submit" value="Qeydiyatdan kecin" />
+            </form>
+            <p>Hesabiniz var? <a asp-action="Index">Giris et</a></p>
+        </div>
+    </section>
+</body>
+
+</html>

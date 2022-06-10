@@ -1,0 +1,88 @@
+﻿@model IEnumerable<AppUser> 
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="UTF-8">
+
+   
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <title>Chat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link href="~/css/style.css" rel="stylesheet" />
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <section class="discussions">
+                <div class="discussion search">
+                    <div class="searchbar">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <input type="text" placeholder="Search..."></input>
+                    </div>
+                </div>
+                @foreach (var item in Model)
+                {
+                    <div class="discussion">
+                        <div class="photo" style="background-image: url(/../img/@item.Image.ImageUrl);">
+                            <div class="online"></div>
+                        </div>
+                        <div class="desc-contact">
+                            <p class="name">@item.FullName</p>
+
+                        </div>
+
+                    </div>
+                }
+                
+
+
+
+
+            </section>
+            <section class="chat">
+                <div class="header-chat">
+                    <div class="photo" style="background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">                      
+                    </div>
+                    <p class="name">Megan Leib</p>
+                    <i class="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
+                </div>
+                <div class="messages-chat">
+                    <div class="message">
+                        <div class="photo" style="background-image: url(https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
+                            <div class="online"></div>
+                        </div>
+                        <p class="text"> Hi, how are you ? </p>
+                    </div>
+                    
+                </div>
+                <div class="footer-chat">
+                    <i class="icon fa fa-smile-o clickable" style="font-size:25pt;" aria-hidden="true"></i>
+                    <input type="text" class="write-message" placeholder="Type your message here"></input>
+                    <i class="icon send fa fa-paper-plane-o clickable" aria-hidden="true"></i>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
